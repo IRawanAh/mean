@@ -20,6 +20,19 @@ app.get('/cats', (request, res) => {
 app.get('/cars/new', (request, res) => {
     res.render('new');
 });
+app.get('/cuddles', (request, res) => {
+    cat={name:"cuddles", age: 2, sleeping: ["under the bed", "under the table"], pic:"./images/cat1.jpg"}
+    res.render('cat', {cat:cat});
+});
+app.get('/blue', (request, res) => {
+    cat={name:"blue", age: 3, sleeping: ["under the bed", "under the table"],pic:"./images/cat2.jpg"}
+    res.render('cat');
+});
+app.get('/velvet', (request, res) => {
+    cat={name:"velvet", age: 1, sleeping: ["under the bed", "under the table"],pic:"./images/cat1.jpg"}
+    res.render('cat');
+});
+
 
 
 app.listen(8000, () => console.log("listening on port 8000"));

@@ -1,0 +1,29 @@
+<html>
+    <head>
+            <link rel="stylesheet" href=".\style\style.css">
+    </head>
+    <style>
+    body{
+        text-align: center;
+    }
+    h1{
+        background-color: pink;
+
+    }
+    img{
+        border-radius: 70px;
+    }
+    </style>
+    <body>
+    
+<h1>EJS Cats</h1>
+<img src=<%= cat.pic %>>
+<h3>Name: <%= cat.name %></h3>
+<h4>Age: <%= cat.age %></h4>
+<ul>
+<% for (var sleep of cat.sleeping) { %>
+<li><%= sleep %></li>
+<% } %>
+</ul>
+</body>
+</html>
