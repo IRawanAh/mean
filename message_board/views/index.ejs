@@ -1,0 +1,42 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container">
+    <h1>The Dojo Message Board</h1>
+    <hr />
+    <br />
+
+    <body>
+        <form action='/message' method='post'>
+            <label>Name</label>
+            <input type='text' class="form-control" name='name'>
+            <label>Message</label>
+            <textarea type='text' class="form-control" name='message'></textarea>
+            <button type="submit">Add </button>
+        </form>
+        <h1>Messages</h1>
+        <div class="container">
+        <% for (var message of messages){ %>
+        <h2>Name: <%=message.name%></h2>
+        <h2>Message: <%=message.content%></h2>
+        <h2>Comments</h2>
+        <% for (var comment of message.comments){ %>
+            <h4>Name: <%=comment.name%></h4>
+            <h4>comment: <%=comment.content%></h4>
+
+        <%}%>
+        <h3>Add comment</h3>
+        <form action='/comment/<%=message.id%>' method='post'>
+            <label>Name</label>
+            <input type='text' class="form-control" name='name'>
+            <label>Message</label>
+            <textarea type='text' class="form-control" name='content'></textarea>
+            <button type="submit">Add </button>
+        </form>
+        <hr>
+        <%}%>
+    </div>
+</body>
+</div>
+
+</html>
