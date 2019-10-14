@@ -1,0 +1,39 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container">
+    <h1>Welcome to Qouteing Dojo</h1>
+    <br />
+    <br />
+    <br />
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <body>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Display</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+            <% for (var animal of animals){ %>
+            <tr>
+                <td><%=animal.name%></td>
+                <td><%=animal.age%></td>
+                <td><a href="/mongooses/<%=animal.id%>">display</a></td>
+                <td><a href="/mongooses/edit/<%=animal.id%>">edit</a></td>
+                <td><a href="/mongooses/destroy/<%=animal.id%>" >delete</a></td>
+
+            </tr>
+
+            <%}%>
+    </table>
+<a href="/mongooses/new">Add new animal </a>
+</body>
+
+</html>
