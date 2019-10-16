@@ -1,6 +1,7 @@
 
 const quotes= require("../controllers/qoutes.js")
 
+
 module.exports = function (app) {
     app.get('/', (req, res) => {
         quotes.index(req, res);
